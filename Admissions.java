@@ -22,6 +22,8 @@ public class Admissions {
             (extracurric * .15));
     }
 
+    //------------------------------- V2 ---------------------------------------
+
     // TODO Task 2: Write admitV2 here
 
     //------------------------------- V3 ---------------------------------------
@@ -197,6 +199,7 @@ public class Admissions {
         System.out.println(res2);
         System.out.println(res3);
 
+        //------------------------------- Task 9 ---------------------------------------
 
         // TODO Task 9: Call findGPAinFile with the correct regexPAth
         String regexPath = "";
