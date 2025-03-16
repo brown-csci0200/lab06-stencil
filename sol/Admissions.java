@@ -1,11 +1,9 @@
-import org.junit.Assert;
+package sol;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.function.Function;
 import java.util.regex.Matcher;
@@ -172,8 +170,8 @@ public class Admissions {
         LabeledMatrix mat2 = new LabeledMatrix(params, functions, 0.75, 0.5, 0.3, 0.25, 0.35, 0, 0, 0.15, 0.7);
 
         // Option 2: use a csv file which is located in the current directory
-        LabeledMatrix mat3 = new LabeledMatrix(students, params, "StudentMatrix.csv");
-        LabeledMatrix mat4 = new LabeledMatrix(params, functions, "FunctionMatrix.csv");
+        LabeledMatrix mat3 = new LabeledMatrix(students, params, "data/StudentMatrix.csv");
+        LabeledMatrix mat4 = new LabeledMatrix(params, functions, "data/FunctionMatrix.csv");
 
         // Option 3: create an empty matrix, and then use setRow/setCol to put values either
         // by row or by column. The first argument is the index of said row/col

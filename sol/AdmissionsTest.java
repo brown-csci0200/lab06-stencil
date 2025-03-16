@@ -1,3 +1,5 @@
+package sol;
+
 import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -17,19 +19,19 @@ public class AdmissionsTest {
   @Before
   public void setUp() {
     // Initialize common test data for all tests
-    studentData = new HashMap<>();
-    studentData.put("gpa", 3.8);
-    studentData.put("sat", 1450.0);
-    studentData.put("extracurric", 4.5);
+    this.studentData = new HashMap<>();
+    this.studentData.put("gpa", 3.8);
+    this.studentData.put("sat", 1450.0);
+    this.studentData.put("extracurric", 4.5);
 
-    admissions = new Admissions();  // Initialize the Admissions instance
+    this.admissions = new Admissions();  // Initialize the Admissions instance
   }
 
   @Test
   public void testAdmitV1() {
     // Calculate expected result
     Double expected = (3.8 * 0.6) + (1450.0 * 0.1) + (4.5 * 0.15);
-    Double result = admissions.admitV1(3.8, 1450.0, 4.5);
+    Double result = this.admissions.admitV1(3.8, 1450.0, 4.5);
 
     // Assert (use Double instead of double to avoid using delta)
     Assert.assertEquals(expected, result);
@@ -39,7 +41,7 @@ public class AdmissionsTest {
   public void testAdmitV2() {
     // Calculate expected result
     Double expected = (3.8 * 0.6) + (1450.0 * 0.1) + (4.5 * 0.15);
-//    Double result = admissions.admitV2(studentData);
+//    Double result = this.admissions.admitV2(studentData);
 //
 //    // Assert
 //    Assert.assertEquals(expected, result);
@@ -52,7 +54,7 @@ public class AdmissionsTest {
     Double expectedContribute = (3.8 * 0.3) + (4.5 * 0.7);
 
     // Call the method to test
-//    ArrayList<Double> result = admissions.admitV3(studentData);
+//    ArrayList<Double> result = this.admissions.admitV3(studentData);
 //
 //    // Assert
 //    Assert.assertEquals(expectedSucceed, result.get(0));
@@ -73,7 +75,7 @@ public class AdmissionsTest {
     Double expectedExtracurric = 4.5 * 0.15;
 
     // Call the method to test
-//    ArrayList<Double> result = admissions.admitV4(studentData, weights);
+//    ArrayList<Double> result = this.admissions.admitV4(studentData, weights);
 //
 //    // Assert that the results are correct
 //    Assert.assertEquals(expectedGPA, result.get(0));
@@ -90,7 +92,7 @@ public class AdmissionsTest {
         weightFunctions1, 292, 437.35, 272.14, 406.86, 252.20, 378.30);
 
     Assert.assertEquals(resultMatrixExpected,
-        admissions.matrixPractice1());
+        Admissions.matrixPractice1());
   }
 
   @Test
@@ -102,6 +104,6 @@ public class AdmissionsTest {
         , WeightFunctions2, 1, 1, 1, 0, 0, 0, 0.5, 0.7, 0.1, 0.5, 0.3, 0.9, 0.5, 0.3, 0.9);
 
     Assert.assertEquals(resultMatrixExpected,
-        admissions.matrixPractice2());
+        Admissions.matrixPractice2());
   }
 }
